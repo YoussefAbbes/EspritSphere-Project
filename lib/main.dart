@@ -2,22 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'app.dart';
+import 'firebase_options.dart';
 import 'screens/boarding_pages/onboarding_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase for mobile & web
+  // Initialize Firebase using platform-specific options from firebase_options.dart.
+  // Credentials are injected at compile time via --dart-define-from-file=.env
   await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: "AIzaSyCFVo90-ZdnS46ujTS4z9cjc2TPxH9OYwM",
-      authDomain: "uniapp-73409.firebaseapp.com",
-      projectId: "uniapp-73409",
-      storageBucket: "uniapp-73409.appspot.com",
-      messagingSenderId: "1091876128146",
-      appId: "1:1091876128146:web:7907eeabadd56bfabcad4b",
-      measurementId: "G-9HBBYWX0QP",
-    ),
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   // Only enable web debugging if running on mobile platforms

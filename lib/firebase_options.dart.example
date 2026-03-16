@@ -1,0 +1,89 @@
+// Firebase configuration template.
+// DO NOT add real credentials here.
+//
+// 1. Copy this file:  cp lib/firebase_options.dart.example lib/firebase_options.dart
+// 2. Fill in your Firebase project values (from Firebase Console → Project Settings)
+// 3. The real firebase_options.dart is listed in .gitignore and must NOT be committed.
+//
+// Alternatively, leave this file as-is and use --dart-define-from-file=.env
+// (see .env.example) so credentials are injected at build time without being
+// stored in source control at all.
+//
+// ignore_for_file: type=lint
+import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+
+class DefaultFirebaseOptions {
+  static FirebaseOptions get currentPlatform {
+    if (kIsWeb) {
+      return web;
+    }
+    switch (defaultTargetPlatform) {
+      case TargetPlatform.android:
+        return android;
+      case TargetPlatform.iOS:
+        return ios;
+      case TargetPlatform.macOS:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
+      case TargetPlatform.windows:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
+      case TargetPlatform.linux:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for linux - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
+      default:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions are not supported for this platform.',
+        );
+    }
+  }
+
+  // Option A – compile-time injection via --dart-define-from-file=.env
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: String.fromEnvironment('FIREBASE_WEB_API_KEY'),
+    appId: String.fromEnvironment('FIREBASE_WEB_APP_ID'),
+    messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGING_SENDER_ID'),
+    projectId: String.fromEnvironment('FIREBASE_PROJECT_ID'),
+    authDomain: String.fromEnvironment('FIREBASE_AUTH_DOMAIN'),
+    storageBucket: String.fromEnvironment('FIREBASE_STORAGE_BUCKET'),
+    measurementId: String.fromEnvironment('FIREBASE_MEASUREMENT_ID'),
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: String.fromEnvironment('FIREBASE_ANDROID_API_KEY'),
+    appId: String.fromEnvironment('FIREBASE_ANDROID_APP_ID'),
+    messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGING_SENDER_ID'),
+    projectId: String.fromEnvironment('FIREBASE_PROJECT_ID'),
+    storageBucket: String.fromEnvironment('FIREBASE_STORAGE_BUCKET'),
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: String.fromEnvironment('FIREBASE_IOS_API_KEY'),
+    appId: String.fromEnvironment('FIREBASE_IOS_APP_ID'),
+    messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGING_SENDER_ID'),
+    projectId: String.fromEnvironment('FIREBASE_PROJECT_ID'),
+    storageBucket: String.fromEnvironment('FIREBASE_STORAGE_BUCKET'),
+    iosBundleId: String.fromEnvironment('FIREBASE_IOS_BUNDLE_ID'),
+  );
+
+  // Option B – hardcode values here after copying this file (NOT recommended for
+  // public/shared repositories – use Option A instead).
+  //
+  // static const FirebaseOptions web = FirebaseOptions(
+  //   apiKey: 'YOUR_WEB_API_KEY',
+  //   appId: 'YOUR_WEB_APP_ID',
+  //   messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  //   projectId: 'YOUR_PROJECT_ID',
+  //   authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
+  //   storageBucket: 'YOUR_PROJECT_ID.firebasestorage.app',
+  //   measurementId: 'YOUR_MEASUREMENT_ID',
+  // );
+}
