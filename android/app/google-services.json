@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1091876128146",
+    "project_id": "uniapp-73409",
+    "storage_bucket": "uniapp-73409.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091876128146:android:e50912fac6e2dd7abcad4b",
+        "android_client_info": {
+          "package_name": "com.example.applicationuni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1AWisA6TGkeRM5k9PU4n7jUbR3Kb1Oc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091876128146:android:0e0929c69def4923bcad4b",
+        "android_client_info": {
+          "package_name": "com.example.uniapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1AWisA6TGkeRM5k9PU4n7jUbR3Kb1Oc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091876128146:android:89c6267f1b0b2fe7bcad4b",
+        "android_client_info": {
+          "package_name": "com.example.universityapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1AWisA6TGkeRM5k9PU4n7jUbR3Kb1Oc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
