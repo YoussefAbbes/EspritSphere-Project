@@ -201,6 +201,12 @@ flutter build apk --release --dart-define-from-file=.env
 6. Open a Pull Request
 
 ---
+## Author && Acknowledgements 
+Youssef Abbes Creator and Lead Developer
+
+This project was developed to enhance the student experience at Esprit University, providing a modern solution for campus engagement and event management. Special thanks to the Flutter and Firebase communities for the robust tools that made this project possible.
+
+GitHub: https://github.com/YoussefAbbes
 
 ## License
 
